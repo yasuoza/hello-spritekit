@@ -57,14 +57,14 @@ class SpaceshipScene : SKScene {
         rock.position = CGPointMake(SpaceshipScene.skRand(0.0, high: self.size.width) * 10, self.size.height-50)
         rock.name = "rock"
         rock.physicsBody = SKPhysicsBody(rectangleOfSize: rock.size)
-        rock.physicsBody.usesPreciseCollisionDetection = true
+        rock.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(rock)
     }
 
     func newSpaceShip() -> SKSpriteNode {
         let hull = SKSpriteNode(color: SKColor.grayColor(), size: CGSizeMake(64, 32))
         hull.physicsBody = SKPhysicsBody(rectangleOfSize: hull.size)
-        hull.physicsBody.dynamic = false
+        hull.physicsBody?.dynamic = false
 
         let light1 = self.newLight()
         light1.position = CGPointMake(-28.0, 6.0)
